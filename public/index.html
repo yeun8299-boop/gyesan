@@ -325,7 +325,8 @@ const MODES = {
   one: {
     label:'한 자리 수 덧셈', emoji:'🔢', timeMs:6000,
     gen(){
-      const a=rand(1,9), b=rand(1,9);
+      let a,b;
+      do { a=rand(1,9); b=rand(1,9); } while(a+b<10);
       return { a, b, ans:a+b, display:`${a} + ${b} = ?` };
     }
   },
